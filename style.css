@@ -1,0 +1,31 @@
+#wrapper{
+    width: 20%;
+    height: 400px;
+    background: url(https://t3.ftcdn.net/jpg/02/07/72/50/500_F_207725028_h5WfLfLGxLBC1ZTAERDri5GUdZ0qJD7q.jpg);
+    background-size: contain;
+    border: 1px solid #333;
+    border-radius: 3px;
+    margin: auto;
+}
+#display{
+    display: flex;
+    flex-wrap: wrap;
+    height: 30%;
+    width: 90%;
+    font-size: 2em;
+}
+.my-input, #enter{
+    height: 6%;
+    width: 90%;
+    font: 1.2em Tahoma;
+    text-align: center;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+span {
+    font-size: 1.6em;
+}
