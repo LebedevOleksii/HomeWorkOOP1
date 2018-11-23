@@ -22,11 +22,12 @@ class Goods {
     }
 
     toFind(){
-        return "Відділ: " + this.department + ", полиця: " + this.shelf + ", місце: " + this.place 
+        let result = "Відділ: " + this.department + ", полиця: " + this.shelf + ", місце: " + this.place;
+        return  result
     }
 
     toWeigh(kg){
-        this.weight = kg * this.weight
+        this.weight = kg * this.weight;
         return this.weight.toFixed(2) + "кг"
     }
     
