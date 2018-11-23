@@ -1,4 +1,8 @@
 #wrapper{
+    display: flex;
+    flex-direction: row;
+}
+#table{
     width: 20%;
     height: 400px;
     background: url(https://t3.ftcdn.net/jpg/02/07/72/50/500_F_207725028_h5WfLfLGxLBC1ZTAERDri5GUdZ0qJD7q.jpg);
