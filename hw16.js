@@ -30,7 +30,7 @@ class Product {
     }
 
     toWeigh(kg){
-        return "Вага: " + (this.weight * kg).toFixed(2) + "кг";
+        return "Вага: " + (this.weight * kg).toFixed(3) + "кг";
     }
     
     toBuy(count){
@@ -88,7 +88,7 @@ const apple = new Product({
 const orange = new Product({
     name: 'Апельсин',
     price: 33.70,
-    weight: 0.2,
+    weight: 0.25,
     department: "фрукти",
     shelf: 1,
     place: 2
@@ -96,7 +96,7 @@ const orange = new Product({
 const tangerine = new Product({
     name: 'Мандарин',
     price: 31.25,
-    weight: 0.09,
+    weight: 0.08,
     department: "фрукти",
     shelf: 1,
     place: 3
@@ -105,7 +105,7 @@ const tangerine = new Product({
 const grapefruit = new Product({
     name: 'Грейфрут',
     price: 41.45,
-    weight: 0.2,
+    weight: 0.4,
     department: "фрукти",
     shelf: 1,
     place: 4
@@ -114,7 +114,7 @@ const grapefruit = new Product({
 const ananas = new Product({
     name: 'Ананас',
     price: 70.50,
-    weight: 1.2,
+    weight: 2,
     department: "фрукти",
     shelf: 2,
     place: 1
@@ -124,7 +124,7 @@ const ananas = new Product({
 const coconut = new Product({
     name: 'Кокос',
     price: 90.50,
-    weight: 0.8,
+    weight: 2.3,
     department: "фрукти",
     shelf: 2,
     place: 2
@@ -134,7 +134,7 @@ const coconut = new Product({
 const kiwi = new Product({
     name: 'Ківі',
     price: 32.25,
-    weight: 0.15,
+    weight: 0.11,
     department: "фрукти",
     shelf: 2,
     place: 3
@@ -153,8 +153,8 @@ const grape = new Product({
 
 const potatoe = new Product({
     name: 'Картопля',
-    price: 5.50,
-    weight: 1,
+    price: 5.5,
+    weight: 0.06,
     department: "овочі",
     shelf: 1,
     place: 1
@@ -163,7 +163,7 @@ const potatoe = new Product({
 const carrot = new Product({
     name: 'Морква',
     price: 2.80,
-    weight: 1,
+    weight: 0.10,
     department: "овочі",
     shelf: 1,
     place: 2
@@ -172,7 +172,7 @@ const carrot = new Product({
 const beetroot = new Product({
     name: 'Буряк',
     price: 3.80,
-    weight: 1,
+    weight: 0.25,
     department: "овочі",
     shelf: 1,
     place: 3
@@ -181,7 +181,7 @@ const beetroot = new Product({
 const onion = new Product({
     name: 'Цибуля',
     price: 2.20,
-    weight: 1,
+    weight: 0.1,
     department: "овочі",
     shelf: 1,
     place: 4
