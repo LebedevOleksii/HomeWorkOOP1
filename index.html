@@ -8,27 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3>Назви продуктів, для пошуку у нашому каталозі:</h3>
-    <ul>
-        <li>Яблука - Apple</li>
-        <li>Рис - Fig</li>
-    </ul>
-    <div id="wrapper">
-        <input type="text" name="" id="display">
-        <div>
-            <span>Знайти у магазині</span>
-            <input type="text" class="my-input" placeholder="Введіть назву">
-        </div>
-        <div>
-            <span>Взважити</span>
-            <input type="text" id="kg" class="my-input" placeholder="Введіть кількість" >
-        </div>
-        <div>
-            <span>Купити</span>
-            <input type="text" id="money" class="my-input" placeholder="Введіть кількість/вагу">
-            <button id="enter" >ENTER</button>
-        </div>
-    </div>  
+
+        <div id="table">
+            <div id="display">
+                <div id="place" class="displayInfo"></div>
+                <div id="weigh" class="displayInfo"></div>
+                <div id="price" class="displayInfo"></div>
+            </div>
+             <div>       <!-- onChange="onChangeProduct(products)" -->
+                <span>Знайти у магазині</span>
+                <select  id="select-box" type="text" id="thisName" class="my-input" placeholder="Введіть назву">
+           </div>            
+            <div>
+                <input type="text" id="kg" class="my-input" placeholder="Введіть кількість(шт)" >
+                <span>Взважити</span>
+
+            </div>
+            <div>
+                <input type="text" id="count" class="my-input" placeholder="Введіть вагу(кг)">
+                <span>Купити</span>
+                <button id="button">enter</button>
+            </div>
+            </div>  
 <script src="hw16.js"></script>
 </body>
 </html>
