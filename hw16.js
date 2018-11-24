@@ -57,17 +57,19 @@ function addProductToList(product){
     selectBox.add(option);
 }
 
-function onChangeProduct(arr) {
+function onChangeProduct(products) {
     var idProduct = selectBox.options[selectBox.selectedIndex].id;
-    // var item = arr.find(item => item.id === idProduct);
-    // return item.name
-    arr.filter(function(a){ return a.id == idProduct })[0]
+    var item = products.find(item => item.id == idProduct);
+    return console.log(item.name)
+    
+    // arr.filter(function(a){ return a.id == idProduct })[0]
 }
 
-button.addEventListener('click', function(){
-    onChangeProduct(products)
-    console.log(a.name)
-})
+
+// button.addEventListener('click', function(){
+//     onChangeProduct(products)
+//     console.log(item.name)
+// })
 
 
 const apple = new Product({
