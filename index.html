@@ -8,44 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="wrapper">
-        <section>
-            <h3>Назви продуктів, для пошуку у нашому каталозі:</h3>
-            <ul>
-                <li>Яблука - "apple"</li>
-                <li>Апельсин - "orange"</li>
-                <li>Мандарин - "tangerine"</li>
-                <li>Грейфрут - "grapefruit"</li>
-                <li>Ананас - "ananas"</li>
-                <li>Кокос - "coconut"</li>
-                <li>Ківі - "kiwi"</li>
-                <li>Виноград - "grape"</li>
-                <li>Картопля - "potatoe"</li>
-                <li>Морква - "carrot"</li>
-                <li>Буряк - "beetroot"</li>
-                <li>Цибуля - "onion"</li>
-                <li>Вівсяна - "oatmeal"</li>
-                <li>Гречка - "buckwheat"</li>
-                <li>Рис - "fig"</li>
-            </ul>
-        </section>
+
         <div id="table">
-            <input type="text" name="display" id="display">
-            <div>
+            <div id="display">
+                <div id="place" class="displayInfo"></div>
+                <div id="weigh" class="displayInfo"></div>
+                <div id="price" class="displayInfo"></div>
+            </div>
+             <div>       <!-- onChange="onChangeProduct(products)" -->
                 <span>Знайти у магазині</span>
-                <select onChange="onChangeProduct(products)" id="select-box" type="text" id="thisName" class="my-input" placeholder="Введіть назву">
-            </div>
+                <select  id="select-box" type="text" id="thisName" class="my-input" placeholder="Введіть назву">
+           </div>            
             <div>
+                <input type="text" id="kg" class="my-input" placeholder="Введіть кількість(шт)" >
                 <span>Взважити</span>
-                <input type="text" id="kg" class="my-input" placeholder="Введіть кількість" >
+
             </div>
             <div>
+                <input type="text" id="count" class="my-input" placeholder="Введіть вагу(кг)">
                 <span>Купити</span>
-                <input type="text" id="money" class="my-input" placeholder="Введіть кількість/вагу">
-            <button id="button">enter</button>
+                <button id="button">enter</button>
             </div>
-        </div>  
-    </div>
+            </div>  
 <script src="hw16.js"></script>
 </body>
 </html>
