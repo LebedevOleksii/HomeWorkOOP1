@@ -16,7 +16,7 @@ body {
     background-size: contain;
     border: 1px solid #333;
     border-radius: 3px;
-    margin: auto;
+    margin: 50px auto;
     box-shadow: 0px 0px 4px 0px #000000;
 }
 #display{
@@ -41,9 +41,12 @@ body {
 #select-box{
     height: 6%;
     width: 121%;
+    text-indent: 2.5em;
+    cursor:pointer;
 }
 #button{
     box-shadow: 0px 0px 2px 0px #20cabc;
+    cursor:pointer;
 }    
 .my-input, #button{
     height: 6%;
@@ -72,5 +75,34 @@ span {
         width: 70%;
         height: 500px;
     }
+}
+@media screen and (max-width: 720px) {
+    #table{
+        margin-top: 60px;
+        width: 70%;
+        height: 900px;
+    }
+    .my-input, #button{
+        height: 50px;
+        width: 420px;
+        font: 1.3em Tahoma;
+        text-align: center;
+    }
+    #select-box{
+        height: 50px;
+        width: 420px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        text-indent: 6.7em;
+      
+    }
+    span {
+        font-size: 2em;
+        text-shadow: 5px 1px 4px rgb(255, 255, 255);
+    }
+    .displayInfo{
+        font: 1.8em Tahoma;
 
+    }
+    
 }
