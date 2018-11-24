@@ -34,7 +34,6 @@ class Product {
     }
     
     toBuy(count){
-        debugger;
         return "Ціна: " + this.price +" грн/1 кг" + ", до сплати: " + (this.price * count).toFixed(2) +  "грн";
     }
 }
