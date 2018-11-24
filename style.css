@@ -1,3 +1,7 @@
+body {
+    background: url(https://st2.depositphotos.com/2430115/11217/i/950/depositphotos_112175240-stock-photo-supermarket-with-blurred-bokeh-background.jpg);
+    background-size: cover;
+}
 #wrapper{
     display: flex;
     flex-direction: row;
