@@ -94,7 +94,7 @@ const getSum = (item) => {
 
 
 const getLastSum = (sum) => {
-    showLastSum.innerHTML = getSum(item).reduce(function(item, current)  {
+    showLastSum.innerHTML = sum.reduce(function(item, current)  {
           return +item + +current
     });
     showLastSum.innerHTML += "грн";
