@@ -7,6 +7,8 @@ const basketButton = document.getElementById('basket-button');
 const iconButton = document.getElementById('icon-basket');
 const selectBox = document.getElementById('select-box');
 const showLastSum = document.getElementById('last-sum');
+const resetButton = document.getElementById('reset-button');
+const tableWrapper = document.getElementById('table-wrapper')
 class Product {
     constructor(options) {
         let {
@@ -48,23 +50,22 @@ class Product {
 
     }
     toBuySum(count, kg) {
-        if(count > 0) {
-            return (this.price * count).toFixed(2);
-        } else if (kg > 0) {
+        if (kg > 0) {
             return (this.price * (this.weight * kg)).toFixed(2);
+        } else if(count > 0) {
+            return (this.price * count).toFixed(2);
         }
     }
-
 }
 
-function getRandomInt(min, max){
+const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 let products = [];
 
 
-function addProductToList(product){
+const addProductToList = (product) => {
     products.push(product);
     const option = document.createElement('option');
     option.id = product.id;
@@ -72,12 +73,12 @@ function addProductToList(product){
     selectBox.add(option);
 }
 
-function onCangeReset(){
+const onCangeReset = () => {
     document.getElementById('kg').value = "";
     document.getElementById('count').value = "";
 }
 
-function onChangeProduct(products) {
+const onChangeProduct = (products) => {
     var idProduct = selectBox.options[selectBox.selectedIndex].id;
     var item = products.find(item => item.id == idProduct);
     return item
@@ -85,23 +86,23 @@ function onChangeProduct(products) {
 
 let sum = [];
 
-function getSum(item) {
+const getSum = (item) => {
     let count = document.getElementById('count').value;
-    sum.push(item.toBuySum(count));
+    let kg = document.getElementById('kg').value;
+    sum.push(item.toBuySum(count, kg));
 }
 
 
-function getLastSum(sum) {
-    showLastSum.innerHTML = sum.reduce(function(item, current){
-          return item + current;
-    },);
+const getLastSum = (sum) => {
+    showLastSum.innerHTML = sum.reduce(function(item, current)  {
+          return +item + +current
+    });
+    showLastSum.innerHTML += "грн";
 }
 
 
-function renderBasket(item, kg, count) {
-    const tableWrapper = document.getElementById('table-wrapper')
-    const tableBasket = document.createElement('table');
-    
+const renderBasket = (item, kg, count) => {
+    const tableBasket = document.createElement('table'); 
     tableBasket.innerHTML += 
     `
         <tr>
@@ -127,7 +128,7 @@ button.addEventListener('click', function(item) {
     if (count > 0) {
         productPrice.innerText = onChangeProduct(products).toBuy(count);
     } else {
-        productPrice.innerText = "";
+        productPrice.innerText = onChangeProduct(products).toBuySum(count, kg);
     }
 });
 
@@ -136,7 +137,7 @@ basketButton.addEventListener('click', function() {
     let kg = document.getElementById('kg').value ;
     getSum(onChangeProduct(products))
     renderBasket(onChangeProduct(products), kg, count)
-})
+});
 
 iconButton.addEventListener('click', function() {
     document.getElementById('basket-wrapper').classList.toggle('basket-hide');
@@ -144,8 +145,11 @@ iconButton.addEventListener('click', function() {
         setTimeout(() => {
             iconButton.style.opacity = .8;
         },100);
-})
+});
 
+resetButton.addEventListener('click', function() {
+    tableWrapper.innerHTML = showLastSum.innerHTML = "";
+});
 
 const apple = new Product({
     name: 'Яблуко',
