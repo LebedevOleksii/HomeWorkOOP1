@@ -79,8 +79,8 @@ const onCangeReset = () => {
 }
 
 const onChangeProduct = (products) => {
-    var idProduct = selectBox.options[selectBox.selectedIndex].id;
-    var item = products.find(item => item.id == idProduct);
+    const idProduct = selectBox.options[selectBox.selectedIndex].id;
+    const item = products.find(item => item.id == idProduct);
     return item
 };
 
@@ -94,7 +94,7 @@ const getSum = (item) => {
 
 
 const getLastSum = (sum) => {
-    showLastSum.innerHTML = sum.reduce(function(item, current)  {
+    showLastSum.innerHTML = getSum(item).reduce(function(item, current)  {
           return +item + +current
     });
     showLastSum.innerHTML += "грн";
@@ -118,13 +118,14 @@ const renderBasket = (item, kg, count) => {
 
 button.addEventListener('click', function(item) {
     productPlace.innerText = onChangeProduct(products).toFind();
+    let count = document.getElementById('count').value;
     let kg = document.getElementById('kg').value ;
     if (kg > 0) {
         productWeigh.innerText = onChangeProduct(products).toWeigh(kg);
     } else {
         productWeigh.innerText = "";
     }
-    let count = document.getElementById('count').value;
+    
     if (count > 0) {
         productPrice.innerText = onChangeProduct(products).toBuy(count);
     } else {
