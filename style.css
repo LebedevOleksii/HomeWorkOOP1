@@ -1,12 +1,10 @@
 body {
     background: url(https://st2.depositphotos.com/2430115/11217/i/950/depositphotos_112175240-stock-photo-supermarket-with-blurred-bokeh-background.jpg);
     background-size: cover;
-}
-#wrapper{
     display: flex;
-    flex-direction: row;
 }
-#table{
+
+#table {
     display: flex;
     flex-direction: column; 
     justify-content: space-around;
@@ -16,10 +14,10 @@ body {
     background-size: contain;
     border: 1px solid #333;
     border-radius: 3px;
-    margin: 50px auto;
+    margin: 50px 50px;
     box-shadow: 0px 0px 4px 0px #000000;
 }
-#display{
+#display {
     display: flex;
     height: 41%;
     width: 88%;
@@ -38,27 +36,36 @@ body {
     height: 33%;
     text-indent: .5em;
 }
-#select-box{
+#select-box {
     height: 6%;
     width: 121%;
     text-indent: 2.5em;
     cursor:pointer;
 }
-#button{
+#buttons-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.buttons {
+    width: 60%;
+    text-align: center;
+    font: 1.2em Tahoma;
     box-shadow: 0px 0px 2px 0px #20cabc;
     cursor:pointer;
-}    
-.my-input, #button{
+}
+
+.my-input {
     height: 6%;
     width: 100%;
     font: 1.2em Tahoma;
     text-align: center;
 }
 
-option[selected]{
+option[selected] {
     color: rgb(177, 169, 169);
 }
-div{
+div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

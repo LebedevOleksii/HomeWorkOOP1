@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HomeWork OOP 16</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="basketStyle.css">
 </head>
 <body>
     <div id="table">
@@ -16,20 +17,41 @@
         </div>
         <div>    
             <span>Знайти у магазині</span>
-            <select   id="select-box" type="text" id="thisName" class="my-input" placeholder="Введіть назву">
+            <select   id="select-box" type="text" id="thisName" class="my-input" placeholder="Введіть назву" onchange="onCangeReset()">
                     <option value=""  disabled selected >Оберіть товар</option>
             </select>
         </div>            
         <div>
-            <input type="text" id="kg" class="my-input" placeholder="Введіть кількість(шт)" >
+            <input type="number" id="kg" class="my-input" placeholder="Введіть кількість(шт)" >
             <span>Взважити</span>
         </div>
         <div>
-            <input type="text" id="count" class="my-input" placeholder="Введіть вагу(кг)">
+            <input type="number" id="count" class="my-input" placeholder="Введіть вагу(кг)" >
             <span>Купити</span>
-            <button id="button">enter</button>
+            <div id="buttons-div">
+                <button class="buttons" id="button">Розрахувати</button>
+                <button class="buttons" id="basket-button">В корзину</button>
+            </div>
         </div>
     </div>  
+    <img id="icon-basket" src="http://icons.iconarchive.com/icons/graphicloads/100-flat/128/cart-icon.png" alt="basket">
+    <div id="basket-wrapper"  >
+        <div id="table-wrapper">
+            <table>
+                <tr>
+                    <td>Назва товару</td>
+                    <td>Ціна товару</td>
+                    <td>Вага товару</td>
+                    <td>До сплати</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>Якщо це все, натисніть на кнопу</p>
+            <button>купити</button>
+            <span id="last-sum"></span>
+        </div>
+    </div>
 <script src="hw16.js"></script>
 </body>
 </html>
