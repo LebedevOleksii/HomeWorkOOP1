@@ -47,7 +47,6 @@ class Product {
         } else if (count > 0) {
             return (1 * count);
         }
-
     }
     toBuySum(count, kg) {
         if (kg > 0) {
@@ -95,7 +94,7 @@ const getSum = (item) => {
 
 const getLastSum = (sum) => {
     showLastSum.innerHTML = sum.reduce(function(item, current)  {
-          return +item + +current
+        return (+item + +current).toFixed(2)
     });
     showLastSum.innerHTML += "грн";
 }
@@ -116,7 +115,7 @@ const renderBasket = (item, kg, count) => {
     getLastSum(sum);
 }
 
-button.addEventListener('click', function(item) {
+button.addEventListener('click', (item) => {
     productPlace.innerText = onChangeProduct(products).toFind();
     let count = document.getElementById('count').value;
     let kg = document.getElementById('kg').value ;
@@ -133,14 +132,14 @@ button.addEventListener('click', function(item) {
     }
 });
 
-basketButton.addEventListener('click', function() {
+basketButton.addEventListener('click', () => {
     let count = document.getElementById('count').value;
     let kg = document.getElementById('kg').value ;
     getSum(onChangeProduct(products))
     renderBasket(onChangeProduct(products), kg, count)
 });
 
-iconButton.addEventListener('click', function() {
+iconButton.addEventListener('click', () => {
     document.getElementById('basket-wrapper').classList.toggle('basket-hide');
     iconButton.style.opacity = .4;  
         setTimeout(() => {
@@ -148,8 +147,9 @@ iconButton.addEventListener('click', function() {
         },100);
 });
 
-resetButton.addEventListener('click', function() {
+resetButton.addEventListener('click', () => {
     tableWrapper.innerHTML = showLastSum.innerHTML = "";
+    sum = [];
 });
 
 const apple = new Product({
